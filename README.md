@@ -20,7 +20,7 @@ Quickstart
 1. `npm install`
 2. `npm build`
 
-Use `npm serve` for development (live reload, no error on linting…)
+Use `npm serve` for development (live reload…)
 
 
 Todo
@@ -34,6 +34,8 @@ Todo
 - Rename variables already declared in the upper scope (no-shadow)
 - Find something prettier that `const myVar = _myVar` for parameter reassignment (no-param-reassign)
 - Use an alternative for the `argument` variable to remove the `Function.prototype.bind()` method (prefer-rest-params)
+
+You can check the `todo`s in the code if you want to contribute!
 
 
 Disclaimer
