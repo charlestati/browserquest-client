@@ -26,14 +26,14 @@ Use `npm serve` for development (live reload…)
 Todo
 ----
 
-- Use Bluebird to switch from callbacks to promises
-- Use arrow functions instead of `var self = this;`
-- Load sprites and config files at compilation time
-- Remove unused functions and methods
-- Use a logger (I imported `log` to allow compilation but I don't know if it works browser side)
-- Rename variables already declared in the upper scope (no-shadow)
-- Find something prettier than `const myVar = _myVar` for parameter reassignment (no-param-reassign)
-- Use an alternative for the `argument` variable to remove the `Function.prototype.bind()` method (prefer-rest-params)
+- [ ] Use Bluebird to switch from callbacks to promises
+- [ ] Use arrow functions instead of `var self = this;`
+- [ ] Load sprites and config files at compilation time
+- [ ] Remove unused functions and methods
+- [ ] Use a logger (I imported `log` to allow compilation but I don't know if it works browser side)
+- [ ] Rename variables already declared in the upper scope (no-shadow)
+- [ ] Find something prettier than `const myVar = _myVar` for parameter reassignment (no-param-reassign)
+- [ ] Use an alternative for the `argument` variable to remove the `Function.prototype.bind()` method (prefer-rest-params)
 
 You can check the `todo`s in the code if you want to contribute!
 
