@@ -32,7 +32,7 @@ Todo
 - Remove unused functions and methods
 - Use a logger (I imported `log` to allow compilation but I don't know if it works browser side)
 - Rename variables already declared in the upper scope (no-shadow)
-- Find something prettier that `const myVar = _myVar` for parameter reassignment (no-param-reassign)
+- Find something prettier than `const myVar = _myVar` for parameter reassignment (no-param-reassign)
 - Use an alternative for the `argument` variable to remove the `Function.prototype.bind()` method (prefer-rest-params)
 
 You can check the `todo`s in the code if you want to contribute!
