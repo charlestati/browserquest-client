@@ -1,0 +1,264 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=Edge, chrome=1')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    meta(name='msapplication-tap-highlight', content='no')
+    // todo Add Open Graph metas
+    // todo Use another color
+    meta(name='theme-color', content='#80b374')
+    title Backpack
+    link(rel='icon', href='favicon.png')
+    link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='styles/achievements.css')
+    script(src='scripts/lib/modernizr.js')
+    //script(src='https://cdn.socket.io/socket.io-1.4.5.js')
+    <!--[if lt IE 9]>
+    link(rel='stylesheet', href='styles/ie.css')
+    script(src='scripts/lib/css3-mediaqueries.js')
+    script.
+      document.getElementById('parchment').className = ('error');
+    <![endif]-->
+  <!--[if lt IE 9 ]> <body class="intro upscaled"> <![endif]-->
+  <!--[if (gte IE 9)|!(IE)]><!--> <body class="intro"> <!--<![endif]-->
+  noscript
+    .alert
+      p You need to enable JavaScript to play BrowserQuest.
+  #intro
+    h1#logo
+      span#logosparks
+    article#portrait
+      p Please rotate your device to landscape mode
+      #tilt
+    section#parchment.createcharacter
+      .parchment-left
+      .parchment-middle
+        article#createcharacter
+          h1
+            span.left-ornament
+            span A Massively Multiplayer Adventure
+            span.right-ornament
+          #character.disabled
+            div
+          form(action='none', method='get', accept-charset='utf-8')
+            input#nameinput.stroke(type='text', name='player-name', placeholder='Name your character', maxlength='15')
+          .play.button.disabled
+            div
+            img(src='images/common/spinner.gif', alt='')
+          .ribbon
+            .top
+            .bottom
+        article#loadcharacter
+          h1
+            span.left-ornament
+            span Load your character
+            span.right-ornament
+          .ribbon
+            .top
+            .bottom
+          img#playerimage(src='')
+          #playername.stroke
+          .play.button
+            div
+            img(src='images/common/spinner.gif', alt='')
+          #create-new
+            span
+              span or
+              |  create a new character
+        article#confirmation
+          h1
+            span.left-ornament
+            span Delete your character?
+            span.right-ornament
+          p
+            | All your items and achievements will be lost.
+            br
+            | Are you sure you wish to continue?
+          .delete.button
+          #cancel
+            span cancel
+        article#credits
+          h1
+            span.left-ornament
+            span.title
+              | Made for Mozilla by
+              a.stroke.clickable(target='_blank', href='http://www.littleworkshop.fr/') Little Workshop
+            span.right-ornament
+          #authors
+            #guillaume
+              .avatar
+              | Pixels by
+              a.stroke.clickable(target='_blank', href='http://twitter.com/glecollinet') Guillaume Lecollinet
+            #franck
+              .avatar
+              | Code by
+              a.stroke.clickable(target='_blank', href='http://twitter.com/whatthefranck') Franck Lecollinet
+          #seb
+            br
+            span#note
+            | Music by
+            a.clickable(target='_blank', href='http://soundcloud.com/gyrowolf/sets/gyrowolfs-rpg-maker-music-pack/') Gyrowolf
+            | ,
+            a.clickable(target='_blank', href='http://blog.dayjo.org/?p=335') Dayjo
+            | ,
+            a.clickable(target='_blank', href='http://soundcloud.com/freakified/what-dangers-await-campus-map') Freakified
+            | , &
+            a.clickable(target='_blank', href='http://www.newgrounds.com/audio/listen/349734') Camoshark
+            br
+            br
+            | SocketIO upgrade by
+            a.clickable(target='_blank', href='http://nenuadrian.com') Adrian Nenu
+          #close-credits
+            span - click anywhere to close -
+        article#about
+          h1
+            span.left-ornament
+            span.title What is BrowserQuest?
+            span.right-ornament
+          p#game-desc
+            | BrowserQuest is a multiplayer game inviting you to explore a
+            | world of adventure from your Web browser.
+          .left
+            .img
+            p
+              | This demo is powered by HTML5 and WebSockets, which allow for real-time gaming and apps on the Web.
+            span.link
+              span.ext-link
+              a.clickable(target='_blank', href='http://hacks.mozilla.org/2012/03/browserquest/') Learn more
+              |  about the technology
+          .right
+            .img
+            p
+              | BrowserQuest is available on Firefox, Chrome, Safari as well as iOS devices and Firefox for Android.
+            span.link
+              span.ext-link
+              a.clickable(target='_blank', href='http://github.com/mozilla/BrowserQuest') Grab the source
+              |  on Github
+          #close-about
+            span - click anywhere to close -
+        article#death
+          p You are dead...
+          #respawn.button
+        article#error
+          h1
+            span.left-ornament
+            span Your browser cannot run BrowserQuest!
+            span.right-ornament
+          p
+            | We're sorry, but your browser does not support WebSockets.
+            br
+            | In order to play, we recommend using the latest version of Firefox, Chrome or Safari.
+      .parchment-right
+  #container
+    #canvasborder
+      article#instructions.clickable
+        .close
+        h1
+          span.left-ornament
+          span How to play
+          span.right-ornament
+        ul
+          li
+            span.icon
+            | Left click or tap to move, attack and pick up items.
+          li
+            span.icon
+            | Press ENTER to chat.
+          li
+            span.icon
+            | Your character is automatically saved as you play.
+        p - click anywhere to close -
+      article#achievements.page1.clickable
+        .close
+        #achievements-wrapper
+          #lists
+        #achievements-count.stroke
+          | Completed
+          div
+            span#unlocked-achievements 0
+            span /
+            span#total-achievements
+        nav.clickable
+          #previous
+          #next
+      #canvas
+        canvas#background
+        canvas#entities
+        canvas#foreground.clickable
+      #bubbles
+      #achievement-notification
+        .coin
+          #coinsparks
+        #achievement-info
+          .title New Achievement Unlocked!
+          .name
+      #bar-container
+        #healthbar
+        #hitpoints
+        #weapon
+        #armor
+        #notifications
+          div
+            span#message1
+            span#message2
+        #playercount.clickable
+          span.count 0
+          span players
+        #barbuttons
+          #chatbutton.barbutton.clickable
+          #achievementsbutton.barbutton.clickable
+          #helpbutton.barbutton.clickable
+          #mutebutton.barbutton.clickable.active
+      #chatbox
+        form(action='none', method='get', accept-charset='utf-8')
+          input#chatinput.gp(type='text', maxlength='60')
+      #population
+        #instance-population
+          span 0
+          span players
+          |  in this world
+        #world-population
+          span 0
+          span players
+          |  total
+  footer
+    #sharing.clickable
+      | United in coding!
+    #credits-link.clickable
+      | –
+      span#toggle-credits Credits
+  ul#page-tmpl.clickable(style='display:none')
+  ul
+    li#achievement-tmpl(style='display:none')
+      .coin
+      span.achievement-name ???
+      span.achievement-description ???
+      .achievement-sharing
+        a.twitter(href='')
+  img.preload(src='images/common/thingy.png', alt='')
+  #resize-check
+  script.
+    var ctx = document.querySelector('canvas').getContext('2d'),
+            parchment = document.getElementById("parchment");
+    if (!(window.WebSocket || window.MozWebSocket)) {
+      parchment.className = "error";
+    }
+    if (ctx.mozImageSmoothingEnabled === undefined) {
+      document.querySelector('body').className += ' upscaled';
+    }
+    if (!Modernizr.localstorage) {
+      var alert = document.createElement("div");
+      alert.className = 'alert';
+      alertMsg = document.createTextNode("You need to enable cookies/localStorage to play BrowserQuest");
+      alert.appendChild(alertMsg);
+      target = document.getElementById("intro");
+      document.body.insertBefore(alert, target);
+    } else if (localStorage && localStorage.data) {
+      parchment.className = "loadcharacter";
+    }
+  script(src='scripts/lib/log.js')
+  script(src='scripts/backpack.js')
