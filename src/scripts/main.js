@@ -9,13 +9,13 @@ let app;
 let game;
 
 function initGame() {
-  const canvas = document.getElementById('entities');
   const background = document.getElementById('background');
+  const entities = document.getElementById('entities');
   const foreground = document.getElementById('foreground');
   const input = document.getElementById('chatinput');
 
   game = new Game(app);
-  game.setup('#bubbles', canvas, background, foreground, input);
+  game.setup('#bubbles', entities, background, foreground, input);
   game.setStorage(app.storage);
   app.setGame(game);
 

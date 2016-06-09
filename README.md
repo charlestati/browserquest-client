@@ -18,9 +18,9 @@ Quickstart
 ----------
 
 1. `npm install`
-2. `npm build`
+2. `npm run build`
 
-Use `npm serve` for development (live reload…)
+Use `npm run serve` for development (live reload…)
 
 
 Todo
